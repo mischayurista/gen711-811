@@ -1,6 +1,6 @@
 ## Lab 1 (take home lab, 01/27/25)
 
-**Step 1. Download and install Visual Studio Code (VScode) from [here](https://code.visualstudio.com/Download)**  
+**Step 1. Download and install Visual Studio Code (VScode) from** [here](https://code.visualstudio.com/Download)  
 
 **Step 2. Open VScode to install the **Remote SSH** extension from the Visual Studio Marketplace:**
   1. Open up vscode and click the 'building blocks' icon on the left hand side of vscode 
