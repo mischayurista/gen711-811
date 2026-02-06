@@ -26,9 +26,9 @@ cd ~
 ## Lab Exercises (put these answers into your lab notebooks)
 
 #### 3a  "3 ways to change directories to HOME from untrimmed_fastq"
-1.
-2.
-3.
+1. cd $HOME
+2. cd ../../../
+3. cd ~
 
 #### 3b. How many programs in /bin 
 1. Do each of the following tasks from your current directory using a single ls command for each:
@@ -37,10 +37,18 @@ cd ~
     - List all of the files in /Applications that end with the letter ‘o’.
     - Bonus: List all of the files in /Applications that contain the letter ‘a’ or the letter ‘c’.
 
-Start with the letter c ____
-Start with the letter a ____
-Start with the letter o ____
+Start with the letter c ls /bin/c*
+Start with the letter a ls /bin/*a*
+Start with the letter o ls /bin/*o*
 Contain the letter ‘a’ or the letter ‘c’ ____
 
 #### Find the line number in your history for the command that listed all the .fastq files using the absolute path. Paste the command that you used to do this below.
-1.
+1. grep / "^fastq"
+
+# NOTES
+"pwd" (print working directory)
+"ls"
+"ls" -F "file/" means that file has more sublayers
+"Cd" change directory
+"cd ../../../" takes you 3 steps out
+grep
