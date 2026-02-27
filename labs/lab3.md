@@ -21,11 +21,18 @@ Add text here
 - How can I see what files and directories I have?
 - How can I specify the location of a file or directory on my computer?
 
+<<<<<<< HEAD
+#### 3a  "3 ways to change directories to HOME from untrimmed_fastq"
+1. cd $HOME
+2. cd ../../../
+3. cd ~
+=======
 ### Objectives:
 - Describe key reasons for learning shell.
 - Navigate your file system using the command line.
 - Access and read help files for bash programs and use help files to identify useful command options.
 - Demonstrate the use of tab completion, and explain its advantages.
+>>>>>>> d4c7f749a3be729cd8177ff1c686d08587ac739b
 
 ## The key points here are:
 - The shell gives you the ability to work more efficiently by using keyboard commands rather than a GUI.
@@ -33,6 +40,24 @@ Add text here
 - Most commands take options (flags) which begin with a -.
 - Tab completion can reduce errors from mistyping and make work more efficient in the shell.
 
+<<<<<<< HEAD
+Start with the letter c ls /bin/c*
+Start with the letter a ls /bin/*a*
+Start with the letter o ls /bin/*o*
+Contain the letter ‘a’ or the letter ‘c’ ____
+
+#### Find the line number in your history for the command that listed all the .fastq files using the absolute path. Paste the command that you used to do this below.
+1. grep / "^fastq"
+
+# NOTES
+"pwd" (print working directory)
+"ls"
+"ls" -F "file/" means that file has more sublayers
+"Cd" change directory
+"cd ../../../" takes you 3 steps out
+grep
+ohhh pleaseeee
+=======
 # Navigating Files and Directories
 - How can I perform operations on files outside of my working directory?
 - What are some navigational shortcuts I can use to make my work more efficient?
@@ -91,3 +116,4 @@ Contain the letter ‘a’ or the letter ‘c’ ____
 #### What command/commands would you use to find the line number in your history for the command that listed all the '.fastq' files using the absolute path. Paste your answer below.
 
 ls gdsfgsd 
+>>>>>>> d4c7f749a3be729cd8177ff1c686d08587ac739b
