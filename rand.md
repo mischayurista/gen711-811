@@ -11,18 +11,6 @@ output: pdf_document
 2. Redirection and pipes lesson
 3. Script writing
 
-history, search history. Also up arrow to look at history
-which, 
-| two mutually exclusive commands
-> redirect
->> double ??
-wc -l count number of lines
-grep search for text line 
--v gets rid of a read line 
-'___' only displays things with those wharacters 
-'^__' only displays things with those characters at the beginning of the line
-
-
 ## review
 which for programs
 conda environments
@@ -35,27 +23,6 @@ Employ the grep command to search for information within files.
 Print the results of a command to a file.
 Construct command pipelines with two or more stages.
 Use for loops to run the same command for several input files.
-
-for filename in *.fastq
-do
-done
-
-example:
-for name in *.fastq
-do
-echo ${name}
-done
-
-two files:
-for fqname in SRR097977.fastq SRR098026.fastq
-do
-wc -l ${fqname}
-done
-
-for filename in *.fastq
-do
-head -n 2 ${filename}
-done >>~/file.txt
 
 
 ## questions for practical
@@ -73,53 +40,29 @@ The four nucleotides that appear in DNA are abbreviated A, C, T and G. Unknown n
 1. Search for the sequence `GNATNACCACTTCC` in the `SRR098026.fastq` file.
   Have your search return all matching lines and the name (or identifier) for each sequence
   that contains a match.
-grep GNATNACCACTTC SRR098026.fastq
-GNATNACCACTTCCAGTGCTGANNNNNNNGGGATG
 
 2. Search for the sequence `AAGTT` in both FASTQ files.
   Have your search return all matching lines and the name (or identifier) for each sequence
   that contains a match.
-  grep AAGTT SRR09*.fastq
-SRR097977.fastq:GATTGCTTTAATGAAAAAGTCATATAAGTTGCCATG
-SRR097977.fastq:TTGTCCACGCTTTTCTATGTAAAGTTTATTTGCTTT
-SRR097977.fastq:TGAAGCCTGCTTTTTTATACTAAGTTTGCATTATAA
-SRR097977.fastq:GTGGCGCTGCTGCATAAGTTGGGTTATCAGGTCGTT
-SRR097977.fastq:GGCAAAATGGTCCTCCAGCCAGGCCAGAAGCAAGTT
-SRR097977.fastq:TTTATTTGTAAAGTTTTGTTGAAATAAGGGTTGTAA
-SRR097977.fastq:TTCTTACCATCCTGAAGTTTTTTCATCTTCCCTGAT
-SRR098026.fastq:GNNNNNNNNCAAAGTTGATCNNNNNNNNNTGTGCG
 
 3. How do the search results differ when matching in one file vs. both files? If you wanted to keep the original FASTQ format, how would you get around this?
-Tells you which file its in 
-
-4. Make a file called 'bad-reads.fastq' made up of reads with 10 Ns or more in a row
-
-
 
 ## Exercise 2
 
 How many sequences are there in `SRR098026.fastq`? Remember that every sequence is formed by four lines.
-wc -l SRR098026.fastq
-996 SRR098026.fastq
 
 ## Exercise 3
 
 How many sequences in `SRR098026.fastq` contain at least 3 consecutive Ns?
-grep NNN SRR098026.fastq | wc -l
-249
 
 ## Exercise 4
 
 Print the file prefix of all of the `.txt` files in our current directory.
 
-for filename in *.fastq
-do
-head -n 2 ${filename}
-done >>~/file.txt
-
 ## Exercise 5
 
 After renaming the fastqs as demonstrated, remove `_2026` from all of the `.txt` files.
+
 
 ## Exercise 6
 
@@ -145,32 +88,22 @@ We want the script to tell us when it's done.
 
 
 
+```bash
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_1.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/004/SRR2589044/SRR2589044_2.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_1.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/003/SRR2584863/SRR2584863_2.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_1.fastq.gz
+curl -O ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR258/006/SRR2584866/SRR2584866_2.fastq.gz
+```
+```bash
+$ cd
+$ wget ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
+```
 
-for fqname in *.fastq 
-do
-fastqc $fqname
-done
+or
 
-echo SRR097977.fastq
-echo SRR098026.fastq
-
-for filename in *.fastq
-do
-head -n 2 ${filename}
-done >> ~/file.txt
-
-
- for filename in *.fastq
- do
- echo -e "name=$(basename ${filename} .fastq)"
- echo -e "mv ${filename}  ${name}_2026.txt"
- done
-
-
-
-
-for filename in *_2019.txt
-do
-name=$(basename ${filename} _2019.txt)
-mv ${filename} ${name}.txt
-done
+```bash
+$ cd
+$ curl -O ftp://ftp.ensemblgenomes.org/pub/release-37/bacteria/species_EnsemblBacteria.txt
+```
