@@ -97,12 +97,17 @@ This metadata describes information on the *Ara-3* clones and the columns repres
 
 Based on the metadata, can you answer the following questions?
 
-1. How many different generations exist in the data?
-2. How many rows and how many columns are in this data?
+1. How many different generations exist in the data? 
+cut -f2 -d',' Filename.csv | sort | uniq | grep -v 'generation' | wc -l
+
+2. How many rows and how many columns are in this data? 
+head -n1 Filename.csv | tr ',' '\n' | wc -l
+
 3. How many citrate+ mutants have been recorded in **Ara-3**?
+
 4. How many hypermutable mutants have been recorded in **Ara-3**?
-
-
+cut -f6 -d',' Filename.csv | sort |uniq -c
+m
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
